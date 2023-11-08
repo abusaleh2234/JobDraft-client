@@ -1,8 +1,16 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from "../../assets/jobDraft-logo.png"
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navigetionbar = () => {
+
+  const { user, logOut } = useContext(AuthContext)
+
+  const heldelLogOut = () => {
+    logOut()
+  }
   return (
     <Navbar fluid rounded>
       <Navbar.Brand href="/">
@@ -10,24 +18,30 @@ const Navigetionbar = () => {
         {/* <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">JobDraft</span> */}
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-          }
-        >
-          <Dropdown.Header>
-            {/* <span className="block text-sm">Bonnie Green</span>
+        {
+          user ? <div className='flex items-center gap-4'>
+            <Dropdown
+              arrowIcon={false}
+              inline
+              label={
+                <Avatar alt="User settings" img={user.photoURL} rounded />
+              }
+            >
+              <Dropdown.Header>
+                {/* <span className="block text-sm">Bonnie Green</span>
             <span className="block truncate text-sm font-medium">name@flowbite.com</span> */}
-          </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
-        </Dropdown>
-        <Navbar.Toggle />
+              </Dropdown.Header>
+              <Dropdown.Item>Dashboard</Dropdown.Item>
+              <Dropdown.Item>Settings</Dropdown.Item>
+              <Dropdown.Item>Earnings</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item>Sign out</Dropdown.Item>
+            </Dropdown>
+            <Navbar.Toggle />
+            <button onClick={heldelLogOut} className='btn'>SingOut</button>
+          </div> : <Link to="/login" className='btn'>Login</Link>
+        }
+
       </div>
       <Navbar.Collapse>
         <Navbar.Link>
@@ -41,7 +55,7 @@ const Navigetionbar = () => {
           </NavLink>
         </Navbar.Link>
         <Navbar.Link>
-        <NavLink
+          <NavLink
             to="/alljobs"
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "text-[#1967d2]" : ""
@@ -50,9 +64,16 @@ const Navigetionbar = () => {
             All Jobs
           </NavLink>
         </Navbar.Link>
-        <Navbar.Link>Services</Navbar.Link>
+        <Navbar.Link><NavLink
+          to="/addjob"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#1967d2]" : ""
+          }
+        >
+          Add A Job
+        </NavLink></Navbar.Link>
         <Navbar.Link>Pricing</Navbar.Link>
-        <Navbar.Link>Contact</Navbar.Link>
+        <Navbar.Link>Contact</Navbar.Link>Add A Job
       </Navbar.Collapse>
     </Navbar>
   );
