@@ -8,10 +8,7 @@
         "salary_range": "1000",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/WFVVcMX/Word-Press-Development-Process.jpg",
-        "job_description": {
-            "skill_reqierment": "Must have extensive working knowledge on WordPress, PHP, jQuery, JavaScript, AJAX, MySQL and JSON.The applicants MUST be expert on CSS3, SASS, Bootstrap and HTML5 too.Advanced label skills in MySQL Database Queries.Ability to write clean code, design, develop, test and fix bugs.Ability to convert PSD/Figma design to interactive Wordpress theme.",
-            "educational_requirements": "Bachelor in Engineering (BEngg) in Computer Science, Master of Science (MSc) in Computer Science"
-        },
+        "job_description":  "Must have extensive working knowledge on WordPress, PHP, jQuery, JavaScript, AJAX, MySQL and JSON.The applicants MUST be expert on CSS3, SASS, Bootstrap and HTML5 too.Advanced label skills in MySQL Database Queries.Ability to write clean code, design, develop, test and fix bugs.Ability to convert PSD/Figma design to interactive Wordpress theme.Bachelor in Engineering (BEngg) in Computer Science, Master of Science (MSc) in Computer Science",
         "creator_email":"abusalehmd65@gmail.com"
     },
     {
@@ -23,10 +20,8 @@
         "salary_range": "800",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/zNf8hrv/fontend-banner.jpg",
-        "job_description": {
-            "skill_reqierment": "Proficiency in web development technologies including HTML5, CSS3, and JavaScript.Experience with modern front-end frameworks and libraries, such as React, Angular, or Vue.js.Familiarity with responsive design principles and mobile-first development.Excellent communication skills, with the ability to clearly convey ideas, designs, and suggestions.",
-            "educational_requirements": "Bachelor of Science (BSc) in Computer Science & Engineering"
-        },
+        "job_description":"Proficiency in web development technologies including HTML5, CSS3, and JavaScript.Experience with modern front-end frameworks and libraries, such as React, Angular, or Vue.js.Familiarity with responsive design principles and mobile-first development.Excellent communication skills, with the ability to clearly convey ideas, designs, and suggestions.Bachelor of Science (BSc) in Computer Science & Engineering"
+        ,
         "creator_email":"abusalehmd65@gmail.com"
     },
     {
@@ -38,10 +33,7 @@
         "salary_range": "1500",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/x63XHqK/php-banner.jpg",
-        "job_description": {
-            "skill_reqierment": "Writing and testing code for new programs.Updating existing programs.Identifying and correcting coding errors.Rewriting programs for different operating systems.You understand MySQL/phpMyAdmin done by others.You have studied Windows/macOS operating system in varsity.You are expert on PHP programming language.You have experience in Laravel framework.",
-            "educational_requirements": "Bachelor of Science (BSc)"
-        },
+        "job_description":  "Writing and testing code for new programs.Updating existing programs.Identifying and correcting coding errors.Rewriting programs for different operating systems.You understand MySQL/phpMyAdmin done by others.You have studied Windows/macOS operating system in varsity.You are expert on PHP programming language.You have experience in Laravel framework.Bachelor of Science (BSc)",
         "creator_email":"abusalehmd65@gmail.com"
     },
     {
@@ -53,10 +45,7 @@
         "salary_range": "2000",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/dQqhxHN/full-stake.jpg",
-        "job_description": {
-            "skill_reqierment": "Proficiency in JavaScript: A strong foundation in JavaScript is essential, as it's the primary language used in web development, especially in the context of Node.js, Express JS, Svelte, React or Vue. Knowledge on Typescript is a plus.Frameworks and Libraries: Required knowledge in at least one MVC framework (eg Laravel, Nestjs, Ruby on Rails, Django) and a frontend Javascript framework (SvelteKit, NextJs or NuxtJs).Frontend Development: Strong skills in frontend development, including HTML, CSS, and responsive web design, are essential for creating user-friendly interfaces. Integrating user-facing elements designed by the front-end team.Database Management: Knowledge of relational databases (e.g., MySQL, PostgreSQL) and NoSQL databases (e.g., MongoDB) depending on project requirements. Knowledge on ORM (eg TypeORM) is a plus.",
-            "educational_requirements": "Bachelor's in Computer Science or related field"
-        },
+        "job_description": "Proficiency in JavaScript: A strong foundation in JavaScript is essential, as it's the primary language used in web development, especially in the context of Node.js, Express JS, Svelte, React or Vue. Knowledge on Typescript is a plus.Frameworks and Libraries: Required knowledge in at least one MVC framework (eg Laravel, Nestjs, Ruby on Rails, Django) and a frontend Javascript framework (SvelteKit, NextJs or NuxtJs).Frontend Development: Strong skills in frontend development, including HTML, CSS, and responsive web design, are essential for creating user-friendly interfaces. Integrating user-facing elements designed by the front-end team.Database Management: Knowledge of relational databases (e.g., MySQL, PostgreSQL) and NoSQL databases (e.g., MongoDB) depending on project requirements. Knowledge on ORM (eg TypeORM) is a plus. Bachelor's in Computer Science or related field",
         "creator_email":"abusalehmd65@gmail.com"
     },
     {
@@ -68,10 +57,7 @@
         "salary_range": "1800",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/jWmFWKP/ios-app.jpg",
-        "job_description": {
-            "skill_reqierment": "Minimum 02 Years Strong Knowledge and Proven Experience in Developing Native iOS App with Objective-C (preferable) or Swift.Deep Knowledge of Object-Oriented Design and Implementation.Experience in the Entire App Life-Cycle - Concept, Design, Build, Deploy, Test, Release to App Stores, and Support.Strong Experience using the Xcode Interface Builder (Creating .Xib/.Nib, Storyboard auto Layout Constraints, etc).Experience with Third-Party Libraries and APIs.Experience in working with iOS Frameworks such as Core Data, Core Animation, Core Graphics, and Core Text, etc.Experience with Crashlytics & Analytics SDK integrations.Familiar with Git, Jira, Trello, and other project management standards.",
-            "educational_requirements": "Bachelor's degree in any discipline."
-        },
+        "job_description": "Minimum 02 Years Strong Knowledge and Proven Experience in Developing Native iOS App with Objective-C (preferable) or Swift.Deep Knowledge of Object-Oriented Design and Implementation.Experience in the Entire App Life-Cycle - Concept, Design, Build, Deploy, Test, Release to App Stores, and Support.Strong Experience using the Xcode Interface Builder (Creating .Xib/.Nib, Storyboard auto Layout Constraints, etc).Experience with Third-Party Libraries and APIs.Experience in working with iOS Frameworks such as Core Data, Core Animation, Core Graphics, and Core Text, etc.Experience with Crashlytics & Analytics SDK integrations.Familiar with Git, Jira, Trello, and other project management standards.Bachelor's degree in any discipline.",
         "creator_email":"abusalehmd2266@gmail.com"
     },
     {
@@ -83,10 +69,7 @@
         "salary_range": "1600",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/m467yfW/ai.jpg",
-        "job_description": {
-            "skill_reqierment": "Experience working with large data sets and familiarity with deep learning and machine learning algorithms and the use of popular AI/ML frameworks.10+ years of experience in digital technologies, big data software development, or another related field. Solid understanding of technology progression, 4IR, and growth strategies Experience in leading a team with multifold revenue growth over the years Excellent verbal and written communication skills",
-            "educational_requirements": "Bachelor's degree in any discipline."
-        },
+        "job_description":  "Experience working with large data sets and familiarity with deep learning and machine learning algorithms and the use of popular AI/ML frameworks.10+ years of experience in digital technologies, big data software development, or another related field. Solid understanding of technology progression, 4IR, and growth strategies Experience in leading a team with multifold revenue growth over the years Excellent verbal and written communication skills.Bachelor's degree in any discipline.",
         "creator_email":"abusalehmd65@gmail.com"
     },
     {
@@ -98,9 +81,7 @@
         "salary_range": "1500",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/w6YhLTW/full-steak-node.png",
-        "job_description": {
-            "skill_reqierment": "Have to Work with Node.Js, LoopBack, Next.Js application Strong knowledge of OOP and functional programming. Thorough understanding of relational databases such as MongoDB, MySQL, or similar technologies. Writing reusable, testable, secured, and efficient TypeScript Code. Solid working knowledge of JavaScript (ES6+), TypeScript, Node.js, React, LoopBack, and Material UI. Knowledge of Software Development Architecture, Software Development Life Cycle. Experience using Git and GitHub/Others for source control."
-        },
+        "job_description": "Have to Work with Node.Js, LoopBack, Next.Js application Strong knowledge of OOP and functional programming. Thorough understanding of relational databases such as MongoDB, MySQL, or similar technologies. Writing reusable, testable, secured, and efficient TypeScript Code. Solid working knowledge of JavaScript (ES6+), TypeScript, Node.js, React, LoopBack, and Material UI. Knowledge of Software Development Architecture, Software Development Life Cycle. Experience using Git and GitHub/Others for source control.",
         "creator_email":"abusalehmd2266@gmail.com"
     },
     {
@@ -112,9 +93,7 @@
         "salary_range": "1500",
         "job_applicants_number": "1",
         "job_banner_img" : "https://i.ibb.co/qsJMNqw/video-editor.png",
-        "job_description": {
-            "skill_reqierment": "The applicants should have experience in the following area(s): Adobe illustrator, Graphics Design, motion graphics, Photography, Professional Video Editing Attention to detail and accuracy to ensure high-quality video output Ability to adapt to different styles, formats, and genres of video content."
-        },
+        "job_description": "The applicants should have experience in the following area(s): Adobe illustrator, Graphics Design, motion graphics, Photography, Professional Video Editing Attention to detail and accuracy to ensure high-quality video output Ability to adapt to different styles, formats, and genres of video content.",
         "creator_email":"abusalehmd2266@gmail.com"
     }
 ]

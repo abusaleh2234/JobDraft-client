@@ -34,10 +34,11 @@ const AuthProvider = ({children}) => {
             // navigate(location?.state ? location?.state :  "/")
           });
         return () => {
-            unsubscribe()
+            return unsubscribe()
         }
     },[])
     const logOut = () => {
+        setLooding(true)
         return signOut(auth)
     }
 

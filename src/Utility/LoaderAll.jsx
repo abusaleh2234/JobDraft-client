@@ -8,6 +8,7 @@ const useLoaderAll = () => {
         axios.get("http://localhost:5000/jobs")
         .then(res => setJobs(res.data))
     },[])
+    
     return {jobs};
 };
 
