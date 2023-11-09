@@ -1,26 +1,53 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import useLoaderAll from "../../Utility/LoaderAll";
 import { AuthContext } from "../../Provider/AuthProvider";
-import MyJobsCard from "../../Component/MyJobsCard";
 import MyJobsTableRow from "../../Component/MyJobsCard";
+import Swal from 'sweetalert2'
+import axios from "axios";
+
 
 const Myjobs = () => {
 
     const { user } = useContext(AuthContext)
     const { jobs } = useLoaderAll()
-
     const myJobs = jobs.filter(job => job.creator_email === user.email)
-    // console.log(myJobs);
+    const [myPostedJobs, setMyPostedJobs] = useState(myJobs)
+
+    // console.log(myPostedJobs,myJobs);
 
     // const { _id, job_title, post_creator_name, job_posting_date, application_deadline, salary_range, job_applicants_number } = job
+
+    const hendelDeleteMyjob = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:5000/myjobdelete/${id}`)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your job post has been deleted.",
+                                icon: "success"
+                            });
+
+                            const remainingJobs = myJobs.filter(job => job._id !== id)
+                            setMyPostedJobs(remainingJobs)
+                        }
+                    })
+            }
+        });
+    }
 
 
     return (
         <div className="w-10/12 mx-auto">
-            {/* {
-                myJobs.map(job => <MyJobsCard key={job._id} job={job}></MyJobsCard>)
-            } */}
-
             <div className="">
 
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -44,7 +71,7 @@ const Myjobs = () => {
                         <tbody>
 
                             {
-                                myJobs.map(job => <MyJobsTableRow key={job._id} job={job}></MyJobsTableRow>)
+                                myJobs.map(job => <MyJobsTableRow key={job._id} job={job} hendelDeleteMyjob={hendelDeleteMyjob}></MyJobsTableRow>)
                             }
                             
                         </tbody>
