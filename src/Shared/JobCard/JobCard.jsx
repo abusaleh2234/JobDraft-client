@@ -6,7 +6,7 @@ const JobCard = ({job}) => {
     return (
         <div className="p-5 border space-y-3">
             <h2 className="text-xl font-semibold text-[#1967d2]">{job_title}</h2>
-            <p>{post_creator_name}</p>
+            <p>Job Poster Name: {post_creator_name}</p>
             <div className="flex justify-between items-center">
                 <p>Salary Range: $ {salary_range}</p>
                 <p>Job Applicants Number: {job_applicants_number}</p>

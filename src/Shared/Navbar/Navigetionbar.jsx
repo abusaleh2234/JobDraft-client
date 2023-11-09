@@ -72,7 +72,14 @@ const Navigetionbar = () => {
         >
           Add A Job
         </NavLink></Navbar.Link>
-        <Navbar.Link>Pricing</Navbar.Link>
+        <Navbar.Link><NavLink
+          to="/myjobs"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#1967d2]" : ""
+          }
+        >
+           My Jobs
+        </NavLink></Navbar.Link>
         <Navbar.Link>Contact</Navbar.Link>Add A Job
       </Navbar.Collapse>
     </Navbar>

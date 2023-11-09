@@ -4,6 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 
 const Addjob = () => {
@@ -11,21 +12,6 @@ const Addjob = () => {
     const [deadline, setDeadline] = useState(new Date());
 
     const { user } = useContext(AuthContext)
-    // {
-    //     "post_creator_name": "Abusaleh",
-    //         "job_title": "Video Editor",
-    //             "category": "On Site Job",
-    //                 "job_posting_date": "11/08/2023",
-    //                     "application_deadline": "12/12/2023",
-    //                         "salary_range": "1500",
-    //                             "job_applicants_number": "1",
-    //                                 "job_banner_img" : "https://i.ibb.co/qsJMNqw/video-editor.png",
-    //                                     "job_description": {
-    //         "skill_reqierment": "The applicants should have experience in the following area(s): Adobe illustrator, Graphics Design, motion graphics, Photography, Professional Video Editing Attention to detail and accuracy to ensure high-quality video output Ability to adapt to different styles, formats, and genres of video content."
-    //     },
-    //     "creator_email": "abusalehmd2266@gmail.com"
-    // }
-
 
     const hendelAddJob = (e) => {
         e.preventDefault()
@@ -55,6 +41,9 @@ const Addjob = () => {
             application_deadline
         }
         console.log(newJob);
+
+        axios.post("http://localhost:5000/jobspost", newJob)
+        .then(res => console.log(res.data))
     }
 
     return (
