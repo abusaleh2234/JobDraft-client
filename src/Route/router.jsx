@@ -6,6 +6,8 @@ import JobDetails from "../Component/JobDetails";
 import Addjob from "../Pages/AddJob/Addjob";
 import Login from "../Login/Login";
 import Register from "../Login/Register";
+import PrivateRoure from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/addjob",
-          element: <Addjob></Addjob>
+          element: <PrivateRoute><Addjob></Addjob></PrivateRoute>
         },
         {
           path: "/login",
