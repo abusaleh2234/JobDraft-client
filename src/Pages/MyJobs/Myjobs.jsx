@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useLoaderAll from "../../Utility/LoaderAll";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyJobsTableRow from "../../Component/MyJobsCard";
@@ -9,9 +9,17 @@ import axios from "axios";
 const Myjobs = () => {
 
     const { user } = useContext(AuthContext)
-    const { jobs } = useLoaderAll()
-    const myJobs = jobs.filter(job => job.creator_email === user.email)
-    const [myPostedJobs, setMyPostedJobs] = useState(myJobs)
+    // const { jobs } = useLoaderAll()
+    const [myPostedJobs, setMyPostedJobs] = useState([])
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/usersjobs?email=${user.email}`)
+        .then(res => setMyPostedJobs(res.data))
+    },[])
+
+    console.log(user.email);
+
+    
 
     // console.log(myPostedJobs,myJobs);
 
@@ -37,7 +45,7 @@ const Myjobs = () => {
                                 icon: "success"
                             });
 
-                            const remainingJobs = myJobs.filter(job => job._id !== id)
+                            const remainingJobs = myPostedJobs.filter(job => job._id !== id)
                             setMyPostedJobs(remainingJobs)
                         }
                     })
@@ -71,7 +79,7 @@ const Myjobs = () => {
                         <tbody>
 
                             {
-                                myJobs.map(job => <MyJobsTableRow key={job._id} job={job} hendelDeleteMyjob={hendelDeleteMyjob}></MyJobsTableRow>)
+                                myPostedJobs.map(job => <MyJobsTableRow key={job._id} job={job} hendelDeleteMyjob={hendelDeleteMyjob}></MyJobsTableRow>)
                             }
                             
                         </tbody>

@@ -104,7 +104,7 @@ const Addjob = () => {
                         </div>
                         <div className="relative z-10 w-full mb-6 group flex items-center justify-between">
                             <label className="block mb-2 text-sm  text-gray-500 dark:text-gray-400 ">Application Deadline: </label>
-                            <span className="rounded-lg"><DatePicker selected={deadline} onChange={(date) => setDeadline(date)} /></span>
+                            <input className="rounded-lg"><DatePicker selected={deadline} onChange={(date) => setDeadline(date)} /></input>
                         </div>
 
                     </div>

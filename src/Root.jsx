@@ -11,7 +11,6 @@ const Root = () => {
             {/* <Component></Component> */}
             <Outlet></Outlet>
             <div><Toaster/></div>
-
         </div>
     );
 };
