@@ -8,10 +8,19 @@ import axios from "axios";
 
 
 const Addjob = () => {
-    const [startDate, setStartDate] = useState(new Date());
-    const [deadline, setDeadline] = useState(new Date());
+
+    const [startDate, setStartDate] = useState(null);
+    const [deadline, setDeadline] = useState(null);
 
     const { user } = useContext(AuthContext)
+
+    const CoustomInput = ({value, onclick}) => {
+        return (
+            <div className="">
+                <input type="text"  className="form-control" placeholder="dd/MM/yyyy" value={value} onClick={onclick} readOnly/>
+            </div>
+        )
+    }
 
     const hendelAddJob = (e) => {
         e.preventDefault()
@@ -26,7 +35,7 @@ const Addjob = () => {
         const creator_email = user.email
         const post_creator_name = user.displayName || form.user_name.value
         const job_posting_date = startDate
-        const application_deadline = deadline
+        const application_deadline = deadline.value
 
         const newJob = {
             job_title,
@@ -40,10 +49,10 @@ const Addjob = () => {
             job_posting_date,
             application_deadline
         }
-        console.log(newJob);
+        // console.log(newJob);
 
-        axios.post("http://localhost:5000/jobspost", newJob)
-        .then(res => console.log(res.data))
+        // axios.post("http://localhost:5000/jobspost", newJob)
+        // .then(res => console.log(res.data))
     }
 
     return (
@@ -100,11 +109,11 @@ const Addjob = () => {
                     <div className="grid md:grid-cols-2 md:gap-6">
                         <div className="relative z-10 w-full mb-6 group flex items-center justify-between">
                             <label className="block mb-2 text-sm  text-gray-500 dark:text-gray-400 ">Job Posting Date: </label>
-                            <span className="rounded-lg"><DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /></span>
+                            <span className="rounded-lg"><DatePicker selected={startDate} dateFormat="yyyy/MM/dd" onChange={(date) => setStartDate(date)} /></span>
                         </div>
                         <div className="relative z-10 w-full mb-6 group flex items-center justify-between">
                             <label className="block mb-2 text-sm  text-gray-500 dark:text-gray-400 ">Application Deadline: </label>
-                            <input className="rounded-lg"><DatePicker selected={deadline} onChange={(date) => setDeadline(date)} /></input>
+                            <span className="rounded-lg"><DatePicker selected={deadline} dateFormat="dd/MM/yyyy" onChange={(date) => setDeadline(date)} coustomInput={<CoustomInput/>}/></span>
                         </div>
 
                     </div>
