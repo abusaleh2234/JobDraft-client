@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import ApplyedJobcard from '../../Component/ApplyedJobcard';
+import { ready } from 'localforage';
 
 const Appliedjobs = () => {
 
@@ -22,14 +23,30 @@ const Appliedjobs = () => {
         }
     })
 
-    console.log(appliedJobs);
+    const [Appliedjobs, setAppliedjob] = useState(appliedJobs)
+
+    console.log(Appliedjobs);
+
+    const hendelFilter = (e) => {
+        console.log(e.target.value);
+        const appliedCategory = e.target.value
+
+        if(appliedCategory === "All"){
+            setAppliedjob(appliedJobs)
+            return ;
+        }
+
+        const OnecategoryJob =  appliedJobs?.filter(job => job.category === appliedCategory)
+        setAppliedjob(OnecategoryJob);
+    }
 
     return (
         <div>
 
             <div className="py-10 text-center">
-                <select name="job_category" className="select select-success w-full max-w-xs border-blue-500">
+                <select onChange={hendelFilter} name="job_category" className="select select-success w-full max-w-xs border-blue-500">
                     <option disabled selected>Select Job Category </option>
+                    <option value="All">All</option>
                     <option value="On Site Job">On Site Job</option>
                     <option value="Part Time">Part Time</option>
                     <option value="Hybrid">Hybrid</option>
@@ -57,7 +74,7 @@ const Appliedjobs = () => {
                 <tbody>
 
                     {
-                        appliedJobs?.map(job => <ApplyedJobcard key={job._id} job={job}></ApplyedJobcard>)
+                        Appliedjobs?.map(job => <ApplyedJobcard key={job._id} job={job}></ApplyedJobcard>)
                     }
 
                 </tbody>
