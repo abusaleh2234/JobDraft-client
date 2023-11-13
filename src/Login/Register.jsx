@@ -4,6 +4,7 @@ import GoogleLogin from './GoogleLogin';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
+import HelmetTitle from '../Component/HelmetTitle';
 
 const Register = () => {
 
@@ -52,6 +53,7 @@ const Register = () => {
     }
     return (
         <div className=" h-full bg-blue-50">
+            <HelmetTitle title={"Register"}></HelmetTitle>
         <div className="hero-content flex-col lg:flex-row-reverse mx-auto">
             <div className="card flex-shrink-0 w-full lg:w-10/12 bg-base-100">
                 <div className=" lg:text-left py-10 mx-8 border-b">

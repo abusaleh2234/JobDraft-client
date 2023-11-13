@@ -4,6 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import MyJobsTableRow from "../../Component/MyJobsCard";
 import Swal from 'sweetalert2'
 import axios from "axios";
+import HelmetTitle from "../../Component/HelmetTitle";
 
 
 const Myjobs = () => {
@@ -56,6 +57,7 @@ const Myjobs = () => {
 
     return (
         <div className="w-10/12 mx-auto">
+            <HelmetTitle title={"My Jobs"}></HelmetTitle>
             <div className="">
 
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

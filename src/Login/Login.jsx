@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Provider/AuthProvider";
 import GoogleLogin from "./GoogleLogin";
+import HelmetTitle from "../Component/HelmetTitle";
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext)
@@ -45,6 +46,7 @@ const Login = () => {
     }
     return (
         <div className="">
+            <HelmetTitle title={"Login"}></HelmetTitle>
             <div className="bg-blue-50 h-full">
                 <div className="hero-content flex-col lg:flex-row-reverse mx-auto">
                     <div className="card flex-shrink-0 md:w-8/12 lg:w-6/12 bg-base-100">

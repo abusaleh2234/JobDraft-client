@@ -3,12 +3,15 @@ import Banner from "./Banner";
 import JobsTab from "./JobsTab";
 import ChooseWhy from "./ChooseWhy";
 import Explore from "./Explore";
+import HelmetTitle from "../../Component/HelmetTitle";
 
 const Home = () => {
 
     const jobs = useLoaderData()
     return (
         <div>
+            <HelmetTitle title={"Home"}>
+            </HelmetTitle>
             <Banner></Banner>
             <div className="py-10">
                 <JobsTab jobs={jobs}></JobsTab>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import HelmetTitle from "../../Component/HelmetTitle";
 
 
 const Addjob = () => {
@@ -59,6 +60,7 @@ const Addjob = () => {
 
     return (
         <div>
+            <HelmetTitle title={"Add A Job"}></HelmetTitle>
             <div className="">
                 <h2 className="text-5xl font-bold text-center py-8">Add a Job</h2>
                 <form onSubmit={hendelAddJob}>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import ApplyedJobcard from '../../Component/ApplyedJobcard';
+import HelmetTitle from '../../Component/HelmetTitle';
 
 const Appliedjobs = () => {
 
@@ -51,7 +52,7 @@ const Appliedjobs = () => {
 
     return (
         <div>
-
+            <HelmetTitle title={"Appliedjobs"}></HelmetTitle>
             <div className="py-10 text-center">
                 <select onChange={hendelFilter} defaultValue={ctg} name="job_category" className="select select-success w-full max-w-xs border-blue-500">
                     <option value="">All</option>

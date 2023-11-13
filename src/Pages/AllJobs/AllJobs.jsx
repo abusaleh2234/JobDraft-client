@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import JobCard from "../../Shared/JobCard/JobCard";
 import useLoaderAll from "../../Utility/LoaderAll";
 import { useQuery } from "@tanstack/react-query";
+import HelmetTitle from "../../Component/HelmetTitle";
 
 const AllJobs = () => {
 
@@ -45,6 +46,7 @@ const AllJobs = () => {
     // console.log(title);
     return (
         <div className="">
+            <HelmetTitle title={"AllJobs"}></HelmetTitle>
             <div className="flex justify-center">
                 <div className="form-control">
                     <form onSubmit={hendelSearch} className="input-group">

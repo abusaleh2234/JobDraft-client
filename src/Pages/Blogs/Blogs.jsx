@@ -1,10 +1,12 @@
 import blogbg from '../../assets/job-bbnn.jpg';
 import blogimg1 from "../../assets/blog-11.jpg"
 import blogimg2 from "../../assets/blog22.jpg"
+import HelmetTitle from '../../Component/HelmetTitle';
 
 const Blogs = () => {
     return (
         <div>
+            <HelmetTitle title={"Blogs"}></HelmetTitle>
             <div className="">
                 <div className="relative bg-cover bg-center	bg-no-repeat" style={{ backgroundImage: `url(${blogbg})` }}>
                     <div className="z-0 hero-overlay absolute  bg-black bg-opacity-60"></div>
