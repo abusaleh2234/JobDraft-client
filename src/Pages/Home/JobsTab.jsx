@@ -16,7 +16,7 @@ const JobsTab = () => {
         axios.get(`http://localhost:5000/jobs/${category}`)
             .then(res => setCtgJobs(res.data))
     }
-    console.log(ctgJobs);
+    // console.log(ctgJobs);
     return (
         <Tabs>
             <TabList>

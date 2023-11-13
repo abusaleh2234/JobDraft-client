@@ -8,7 +8,7 @@ const AllJobs = () => {
 
     const [jobs] = useLoaderAll();
     const [AllJobs, setAllJobs] = useState([]);
-    const [title, setTitle] = useState(null)
+    // const [title, setTitle] = useState(null)
 
     // console.log(AllJobs);
 
@@ -39,9 +39,10 @@ const AllJobs = () => {
     const hendelSearch = (e) => {
         e.preventDefault()
         const titlename = e.target.title.value
-        setTitle(titlename);
+        const searchjobs = jobs?.filter(job => job.job_title == titlename)
+        setAllJobs(searchjobs)
     }
-    console.log(title);
+    // console.log(title);
     return (
         <div className="">
             <div className="flex justify-center">

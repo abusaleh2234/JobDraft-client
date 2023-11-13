@@ -23,8 +23,12 @@ const Appliedjobs = () => {
             // })
         }
     })
+
+    const [Appliedjobs, setAppliedjob] = useState([])
+    useEffect(()=>{
+        setAppliedjob(jobs)
+    },[])
     console.log(jobs);
-    const [Appliedjobs, setAppliedjob] = useState(jobs)
     // const [Appliedjobsctg, setAppliedjobctg] = useState(data)
     // console.log(Appliedjobs);
 
@@ -32,6 +36,9 @@ const Appliedjobs = () => {
         console.log(e.target.value);
         const appliedCategory = e.target.value
         setCtg(appliedCategory)
+        if(appliedCategory === ""){
+            setAppliedjob(jobs)
+        }
 
       
         axios.get(`http://localhost:5000/appliedjobsctg?email=${user.email}&ctg=${ctg}`)
@@ -46,9 +53,8 @@ const Appliedjobs = () => {
         <div>
 
             <div className="py-10 text-center">
-                <select onChange={hendelFilter} name="job_category" className="select select-success w-full max-w-xs border-blue-500">
-                    <option disabled value="All" selected>Select Job Category </option>
-                    <option value="All">All</option>
+                <select onChange={hendelFilter} defaultValue={ctg} name="job_category" className="select select-success w-full max-w-xs border-blue-500">
+                    <option value="">All</option>
                     <option value="On Site Job">On Site Job</option>
                     <option value="Part Time">Part Time</option>
                     <option value="Hybrid">Hybrid</option>
@@ -76,7 +82,7 @@ const Appliedjobs = () => {
                 <tbody>
 
                     {
-                        jobs?.map(job => <ApplyedJobcard key={job._id} job={job}></ApplyedJobcard>)
+                        Appliedjobs?.map(job => <ApplyedJobcard key={job._id} job={job}></ApplyedJobcard>)
                     }
 
                 </tbody>

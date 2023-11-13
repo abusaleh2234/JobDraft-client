@@ -13,13 +13,13 @@ const Myjobs = () => {
     const [myPostedJobs, setMyPostedJobs] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/usersjobs?email=${user.email}`)
-        .then(res => setMyPostedJobs(res.data))
-    },[])
+        axios.get(`http://localhost:5000/usersjobs?email=${user.email}`, { withCredentials: true })
+            .then(res => setMyPostedJobs(res.data))
+    }, [])
 
     console.log(user.email);
 
-    
+
 
     // console.log(myPostedJobs,myJobs);
 
@@ -81,7 +81,7 @@ const Myjobs = () => {
                             {
                                 myPostedJobs.map(job => <MyJobsTableRow key={job._id} job={job} hendelDeleteMyjob={hendelDeleteMyjob}></MyJobsTableRow>)
                             }
-                            
+
                         </tbody>
                     </table>
                 </div>
