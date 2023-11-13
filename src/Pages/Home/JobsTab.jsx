@@ -8,7 +8,7 @@ import useLoaderAll from '../../Utility/LoaderAll';
 
 const JobsTab = () => {
 
-    const {jobs} = useLoaderAll()
+    const [jobs] = useLoaderAll()
     const categorys = ["On Site Job", "Remote Job", "Hybrid", "Part Time"]
     const [ctgJobs, setCtgJobs] = useState([])
 

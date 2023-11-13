@@ -34,8 +34,10 @@ const Addjob = () => {
         const job_banner_img = form.job_banner_url.value
         const creator_email = user.email
         const post_creator_name = user.displayName || form.user_name.value
-        const job_posting_date = startDate
-        const application_deadline = deadline.value
+        const job_posting_date = startDate.toISOString().slice(0, 10)
+        const application_deadline = deadline.toISOString().slice(0, 10)
+
+        console.log( application_deadline, deadline);
 
         const newJob = {
             job_title,
@@ -49,10 +51,10 @@ const Addjob = () => {
             job_posting_date,
             application_deadline
         }
-        // console.log(newJob);
+        console.log(newJob);
 
-        // axios.post("http://localhost:5000/jobspost", newJob)
-        // .then(res => console.log(res.data))
+        axios.post("http://localhost:5000/jobspost", newJob)
+        .then(res => console.log(res.data))
     }
 
     return (
@@ -113,7 +115,7 @@ const Addjob = () => {
                         </div>
                         <div className="relative z-10 w-full mb-6 group flex items-center justify-between">
                             <label className="block mb-2 text-sm  text-gray-500 dark:text-gray-400 ">Application Deadline: </label>
-                            <span className="rounded-lg"><DatePicker selected={deadline} dateFormat="dd/MM/yyyy" onChange={(date) => setDeadline(date)} coustomInput={<CoustomInput/>}/></span>
+                            <span className="rounded-lg"><DatePicker placeholder="date" selected={deadline} dateFormat="dd/MM/yyyy" onChange={(date) => setDeadline(date)} coustomInput={<CoustomInput/>}/></span>
                         </div>
 
                     </div>

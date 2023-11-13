@@ -31,10 +31,7 @@ const Navigetionbar = () => {
                 {/* <span className="block text-sm">Bonnie Green</span>
             <span className="block truncate text-sm font-medium">name@flowbite.com</span> */}
               </Dropdown.Header>
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
-              <Dropdown.Divider />
+              <Dropdown.Item>{user.displayName}</Dropdown.Item>
               <Dropdown.Item>Sign out</Dropdown.Item>
             </Dropdown>
             <Navbar.Toggle />
@@ -87,6 +84,14 @@ const Navigetionbar = () => {
           }
         >
           Applied Jobs
+        </NavLink></Navbar.Link>
+        <Navbar.Link><NavLink
+          to="/blogs"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#1967d2]" : ""
+          }
+        >
+          Blogs
         </NavLink></Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

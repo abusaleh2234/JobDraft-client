@@ -10,13 +10,15 @@ import PrivateRoute from "./PrivateRoute";
 import Myjobs from "../Pages/MyJobs/Myjobs";
 import UpdateJobs from "../Pages/UpdateJobs/UpdateJobs";
 import Appliedjobs from "../Pages/Appliedjobs/Appliedjobs";
+import Blogs from "../Pages/Blogs/Blogs";
+import NotFound from "../Component/NotFound";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
-    //   errorElement: <></>,
+      errorElement: <NotFound></NotFound>,
       children: [
         {
             path:"/",
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
         {
           path: "/appliedjobs",
           element: <PrivateRoute><Appliedjobs></Appliedjobs></PrivateRoute>
+        },
+        {
+          path: "/blogs",
+          element: <Blogs></Blogs>
         },
         {
           path: "/login",

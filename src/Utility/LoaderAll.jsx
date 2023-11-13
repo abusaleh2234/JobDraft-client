@@ -9,7 +9,7 @@ const useLoaderAll = () => {
         .then(res => setJobs(res.data))
     },[])
     
-    return {jobs};
+    return [jobs];
 };
 
 

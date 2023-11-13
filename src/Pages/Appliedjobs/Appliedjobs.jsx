@@ -1,15 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import ApplyedJobcard from '../../Component/ApplyedJobcard';
-import { ready } from 'localforage';
 
 const Appliedjobs = () => {
 
     const { user } = useContext(AuthContext)
+    const [ctg, setCtg] = useState("")
+    
 
-    const { isPending, isError, data: appliedJobs, error } = useQuery({
+    const { isPending, isError, data: jobs, error } = useQuery({
         queryKey: ['appliedjobs'],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/appliedjobs?email=${user.email}`)
@@ -22,30 +23,31 @@ const Appliedjobs = () => {
             // })
         }
     })
-
-    const [Appliedjobs, setAppliedjob] = useState(appliedJobs)
-
-    console.log(Appliedjobs);
+    console.log(jobs);
+    const [Appliedjobs, setAppliedjob] = useState(jobs)
+    // const [Appliedjobsctg, setAppliedjobctg] = useState(data)
+    // console.log(Appliedjobs);
 
     const hendelFilter = (e) => {
         console.log(e.target.value);
         const appliedCategory = e.target.value
+        setCtg(appliedCategory)
 
-        if(appliedCategory === "All"){
-            setAppliedjob(appliedJobs)
-            return ;
-        }
-
-        const OnecategoryJob =  appliedJobs?.filter(job => job.category === appliedCategory)
-        setAppliedjob(OnecategoryJob);
+      
+        axios.get(`http://localhost:5000/appliedjobsctg?email=${user.email}&ctg=${ctg}`)
+        .then(res => setAppliedjob(res.data))
     }
+
+    
+
+    
 
     return (
         <div>
 
             <div className="py-10 text-center">
                 <select onChange={hendelFilter} name="job_category" className="select select-success w-full max-w-xs border-blue-500">
-                    <option disabled selected>Select Job Category </option>
+                    <option disabled value="All" selected>Select Job Category </option>
                     <option value="All">All</option>
                     <option value="On Site Job">On Site Job</option>
                     <option value="Part Time">Part Time</option>
@@ -74,7 +76,7 @@ const Appliedjobs = () => {
                 <tbody>
 
                     {
-                        Appliedjobs?.map(job => <ApplyedJobcard key={job._id} job={job}></ApplyedJobcard>)
+                        jobs?.map(job => <ApplyedJobcard key={job._id} job={job}></ApplyedJobcard>)
                     }
 
                 </tbody>

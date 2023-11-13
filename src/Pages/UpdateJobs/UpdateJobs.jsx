@@ -26,8 +26,8 @@ const UpdateJobs = () => {
         const job_banner_img = form.job_banner_url.value
         const creator_email = user.email
         const post_creator_name = user.displayName || form.user_name.value
-        const job_posting_date = startDate
-        const application_deadline = deadline
+        const job_posting_date = startDate.toISOString().slice(0, 10)
+        const application_deadline = deadline.toISOString().slice(0, 10)
 
         const updateJob = {
             job_title,
