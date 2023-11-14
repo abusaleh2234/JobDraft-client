@@ -43,7 +43,7 @@ const UpdateJobs = () => {
         }
         console.log(updateJob);
 
-        axios.put(`http://localhost:5000/updatejob/${_id}`, updateJob)
+        axios.put(`https://job-draft-assignment-11-server.vercel.app/updatejob/${_id}`, updateJob)
         .then(res => console.log(res.data))
     }
 

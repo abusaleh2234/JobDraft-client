@@ -13,7 +13,7 @@ const JobsTab = () => {
     const [ctgJobs, setCtgJobs] = useState([])
 
     const hendelCtgJobs = (category) => {
-        axios.get(`http://localhost:5000/jobs/${category}`)
+        axios.get(`https://job-draft-assignment-11-server.vercel.app/jobs/${category}`)
             .then(res => setCtgJobs(res.data))
     }
     // console.log(ctgJobs);

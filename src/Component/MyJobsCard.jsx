@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const MyJobsTableRow = ({ job, hendelDeleteMyjob }) => {
 
@@ -36,5 +37,8 @@ const MyJobsTableRow = ({ job, hendelDeleteMyjob }) => {
     );
 
 };
-
+MyJobsTableRow.propTypes ={
+    job:PropTypes.object.isRequired,
+    hendelDeleteMyjob:PropTypes.func.isRequired
+}
 export default MyJobsTableRow;

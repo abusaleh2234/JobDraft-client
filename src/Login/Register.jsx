@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from './GoogleLogin';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -10,6 +10,8 @@ const Register = () => {
 
     const {creatUser} = useContext(AuthContext)
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
+    const location = useLocation()
     // console.log(error);
 
     const hendelRegister = (e) => {
@@ -47,6 +49,8 @@ const Register = () => {
             console.log(res.user)
             // setUser(res?.user)
             toast.success('Your Login Successfully!')
+            navigate(location?.state ? location?.state :  "/")
+
         })
         .catch(err => console.log(err))
 
@@ -89,9 +93,9 @@ const Register = () => {
                     <div className="form-control mt-6">
                         <button className="btn text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Register</button>
                     </div>
-                    {/* {
+                    {
                         error && <p className="text-sm text-center text-red-600">{error}</p>
-                    } */}
+                    }
                     <GoogleLogin></GoogleLogin>
                     <div className="text-center pt-4">
                         <p className="text-lg">Alredy have an account please? <Link to="/login" className="text-red-600 font-bold">Login</Link></p>

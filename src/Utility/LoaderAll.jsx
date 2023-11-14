@@ -5,7 +5,7 @@ const useLoaderAll = () => {
     const [jobs, setJobs] = useState([])
     
     useEffect( () => {
-        axios.get("http://localhost:5000/jobs")
+        axios.get("https://job-draft-assignment-11-server.vercel.app/jobs")
         .then(res => setJobs(res.data))
     },[])
     

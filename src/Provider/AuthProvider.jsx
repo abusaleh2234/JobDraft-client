@@ -11,9 +11,11 @@ export const AuthContext = createContext()
 const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
 
+
     const [user, setUser] = useState()
     const [Looding, setLooding] = useState(true)
 
+    // const navigate = useNavigate()
     const creatUser = (email, password) => {
         setLooding(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -39,11 +41,11 @@ const AuthProvider = ({children}) => {
             // navigate(location?.state ? location?.state :  "/")
 
             if(currentUser){
-                axios.post("http://localhost:5000/jwt",loginUser,{withCredentials: true})
+                axios.post("https://job-draft-assignment-11-server.vercel.app/jwt", loginUser, { withCredentials: true })
                 .then(res => console.log("User token",res.data))
             }
             else{
-                axios.post("http://localhost:5000/logout",loginUser, {withCredentials: true})
+                axios.post("https://job-draft-assignment-11-server.vercel.app/logout", loginUser, { withCredentials: true })
                 .then(res => console.log(res.data))
             }
           });
@@ -71,5 +73,4 @@ const AuthProvider = ({children}) => {
         </AuthContext.Provider>
     );
 };
-
 export default AuthProvider;

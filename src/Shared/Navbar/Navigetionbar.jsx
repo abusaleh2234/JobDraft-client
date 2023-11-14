@@ -32,6 +32,7 @@ const Navigetionbar = () => {
             <span className="block truncate text-sm font-medium">name@flowbite.com</span> */}
               </Dropdown.Header>
               <Dropdown.Item>{user.displayName}</Dropdown.Item>
+              <Dropdown.Item>{user.email}</Dropdown.Item>
               <Dropdown.Item>Sign out</Dropdown.Item>
             </Dropdown>
             <Navbar.Toggle />

@@ -16,7 +16,7 @@ const AllJobs = () => {
     // const { isPending, isError, data, error } = useQuery({
     //     queryKey: ['searchjobs'],
     //     queryFn: async () => {
-    //         const res = await fetch(`http://localhost:5000/jobssearch/${title}`)
+    //         const res = await fetch(`https://job-draft-assignment-11-server.vercel.app/jobssearch/${title}`)
     //         return res.json()
     //     }
     // })
@@ -40,7 +40,7 @@ const AllJobs = () => {
     const hendelSearch = (e) => {
         e.preventDefault()
         const titlename = e.target.title.value
-        const searchjobs = jobs?.filter(job => job.job_title == titlename)
+        const searchjobs = jobs?.filter(job => job.job_title.toLowerCase() == titlename.toLowerCase())
         setAllJobs(searchjobs)
     }
     // console.log(title);

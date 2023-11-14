@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Provider/AuthProvider";
 import GoogleLogin from "./GoogleLogin";
@@ -7,8 +7,8 @@ import HelmetTitle from "../Component/HelmetTitle";
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext)
-    // const navigate = useNavigate()
-    // const location = useLocation()
+    const navigate = useNavigate()
+    const location = useLocation()
 
 
     const hendelLogin = (e) => {
@@ -36,7 +36,8 @@ const Login = () => {
             .then(res => {
                 console.log(res.user)
                 toast.success('Your Login Successfully!')
-                // navigate(location?.state ? location.state : "/")
+                navigate(location?.state ? location?.state : "/")
+
             })
             .catch(err => {
                 if(err) {

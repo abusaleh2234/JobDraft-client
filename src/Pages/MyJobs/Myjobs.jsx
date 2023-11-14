@@ -14,7 +14,7 @@ const Myjobs = () => {
     const [myPostedJobs, setMyPostedJobs] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/usersjobs?email=${user.email}`, { withCredentials: true })
+        axios.get(`https://job-draft-assignment-11-server.vercel.app/usersjobs?email=${user.email}`, { withCredentials: true })
             .then(res => setMyPostedJobs(res.data))
     }, [])
 
@@ -37,7 +37,7 @@ const Myjobs = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/myjobdelete/${id}`)
+                axios.delete(`https://job-draft-assignment-11-server.vercel.app/myjobdelete/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
@@ -56,7 +56,7 @@ const Myjobs = () => {
 
 
     return (
-        <div className="w-10/12 mx-auto">
+        <div className="md:w-10/12 mx-auto">
             <HelmetTitle title={"My Jobs"}></HelmetTitle>
             <div className="">
 

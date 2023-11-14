@@ -54,7 +54,7 @@ const Addjob = () => {
         }
         console.log(newJob);
 
-        axios.post("http://localhost:5000/jobspost", newJob)
+        axios.post("https://job-draft-assignment-11-server.vercel.app/jobspost", newJob)
         .then(res => console.log(res.data))
     }
 

@@ -14,11 +14,11 @@ const Appliedjobs = () => {
     const { isPending, isError, data: jobs, error } = useQuery({
         queryKey: ['appliedjobs'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/appliedjobs?email=${user.email}`)
+            const res = await fetch(`https://job-draft-assignment-11-server.vercel.app/appliedjobs?email=${user.email}`)
             return res.json()
 
 
-            // axios.get(`http://localhost:5000/appliedjobs?email=${user.email}`)
+            // axios.get(`https://job-draft-assignment-11-server.vercel.app/appliedjobs?email=${user.email}`)
             // .then(res => {
             //     return res.data;
             // })
@@ -28,7 +28,7 @@ const Appliedjobs = () => {
     const [Appliedjobs, setAppliedjob] = useState([])
     useEffect(()=>{
         setAppliedjob(jobs)
-    },[])
+    }, [jobs])
     console.log(jobs);
     // const [Appliedjobsctg, setAppliedjobctg] = useState(data)
     // console.log(Appliedjobs);
@@ -37,12 +37,12 @@ const Appliedjobs = () => {
         console.log(e.target.value);
         const appliedCategory = e.target.value
         setCtg(appliedCategory)
-        if(appliedCategory === ""){
-            setAppliedjob(jobs)
-        }
+        // if(appliedCategory === ""){
+        //     setAppliedjob(jobs)
+        // }
 
       
-        axios.get(`http://localhost:5000/appliedjobsctg?email=${user.email}&ctg=${ctg}`)
+        axios.get(`https://job-draft-assignment-11-server.vercel.app/appliedjobsctg?email=${user.email}&ctg=${ctg}`)
         .then(res => setAppliedjob(res.data))
     }
 

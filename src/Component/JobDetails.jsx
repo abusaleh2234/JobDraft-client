@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 // import ModalFullscreenExample from "./Modale";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Button, Checkbox, Label, Modal, TextInput } from 'flowbite-react';
+import { Button, Modal } from 'flowbite-react';
 import axios from "axios";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
@@ -65,9 +65,9 @@ const JobDetails = () => {
             job_applicants_number,
             creator_email
         }
-        console.log(applysubmit);
+        // console.log(applysubmit);
 
-        axios.post("http://localhost:5000/applyedjobs",applysubmit)
+        axios.post("https://job-draft-assignment-11-server.vercel.app/applyedjobs", applysubmit)
         .then(res => {
             if(res.data.insertedId){
                 Swal.fire({
@@ -82,12 +82,12 @@ const JobDetails = () => {
 
 
     return (
-        <div className="space-y-5 pb-10">
+        <div className="space-y-5 pb-10 p-2 md:p-0">
             <div className="hero h-[85vh]" style={{ backgroundImage: `url(${job_banner_img})` }}>
                 <div className="hero-overlay bg-opacity-70"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-2xl">
-                        <h1 className="mb-5 text-7xl font-bold">We Are Hired <span className="text-[#1967d2]">{job_title}</span></h1>
+                        <h1 className="mb-5 text-4xl md:text-7xl font-bold">We Are Hired <span className="text-[#1967d2]">{job_title}</span></h1>
                         {/* <p className="mb-5">{job_description}</p> */}
                     </div>
                 </div>
@@ -96,11 +96,11 @@ const JobDetails = () => {
                 <h2 className="text-4xl font-semibold text-black border-l-4 pl-4 border-l-blue-700">{job_title}</h2>
                 <p className="text-xl font-semibold text-sky-600">Job Poster Name: {post_creator_name}</p>
                 <p>{job_description}</p>
-                <div className="flex justify-between items-center">
+                <div className="md:flex justify-between items-center">
                     <p><span className="text-base font-bold">Salary Range:</span> $ {salary_range}</p>
                     <p>Job Applicants Number: {job_applicants_number}</p>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="md:flex justify-between items-center">
                     <p>Job Posting Date: {job_posting_date}</p>
                     <p>Application Deadline: <span className="font-bold">{application_deadline}</span></p>
                 </div>
@@ -108,7 +108,7 @@ const JobDetails = () => {
 
                     <Button onClick={() => {
                         applyControl()
-                    }} className="btn w-full text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Apply</Button>
+                    }} className="btn w-full text-white my-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Apply</Button>
                     <Modal show={openModal} size="4xl" onClose={onCloseModal} popup>
                         <Modal.Header />
                         <Modal.Body>
