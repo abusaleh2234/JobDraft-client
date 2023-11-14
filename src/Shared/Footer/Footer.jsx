@@ -29,7 +29,9 @@ const Footer = () => {
                 </nav>
 
             </footer>
-        
+            <aside className="pb-5 text-center">
+                <p className="text-slate-500">Copyright © 2023 - All right reserved by <Link to="/" className="font-semibold hover:text-blue-600">JobDraft</Link></p>
+            </aside>
         </div>
     );
 };
